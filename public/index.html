@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#101919">
+  <meta name="description" content="Ruta 03: un juego de carros con dos niveles, tres vidas y un reto de seis puntos. José Eduardo Alvarado Mejía.">
+  <title>Ruta 03 · José Eduardo Alvarado Mejía</title>
+  <link rel="icon" href="assets/img/jugador.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="estilos.css">
+  <script defer src="vendor/phaser.min.js"></script>
+  <script defer src="reglas.js"></script>
+  <script defer src="sonido.js"></script>
+  <script defer src="principal.js"></script>
+</head>
+<body>
+<header class="cabecera">
+  <a class="marca" href="./" aria-label="Ruta 03 inicio"><span class="simbolo" aria-hidden="true">↗</span> RUTA<span class="numero">03</span></a>
+  <span class="edicion">EDICIÓN ARCADE / 2026</span>
+  <button class="boton-icono" id="sonido" type="button" aria-pressed="true">♫ <span>Sonido activado</span></button>
+</header>
+<main class="principal">
+  <section class="presentacion" aria-labelledby="titulo">
+    <p class="etiqueta"><i></i> UN JUEGO. DOS DESTINOS.</p>
+    <h1 id="titulo">El reto está <br>en la <em>ruta.</em></h1>
+    <p class="descripcion">Toma el volante, esquiva el tráfico y deja los obstáculos atrás. Solo tienes tres vidas para llegar a la meta.</p>
+    <div class="autor"><span class="avatar">EA</span><div><small>DISEÑADO Y DESARROLLADO POR</small><strong>José Eduardo Alvarado Mejía</strong></div></div>
+    <div class="itinerario" aria-label="Los dos niveles">
+      <div class="etapa actual" id="etapa1"><b>01</b><span>Costa al amanecer<small>3 puntos para avanzar</small></span><span class="destino">↗</span></div>
+      <div class="etapa" id="etapa2"><b>02</b><span>Ciudad de neón<small>Más velocidad. Nuevos obstáculos.</small></span><span class="destino">↗</span></div>
+    </div>
+    <details class="instrucciones"><summary>Antes de arrancar <span>+</span></summary><p>Usa las flechas o W, A, S y D. En el celular, arrastra tu carro o usa los botones. Cada obstáculo que dejas atrás vale un punto. Un choque resta una vida. Al llegar a 3 puntos, empieza el nivel 2; gana con 6 puntos en total. P o Escape pausa.</p></details>
+    <p class="nota-curso">Diseño y Desarrollo de Juegos Interactivos I · UTP</p>
+  </section>
+  <section class="zona-juego" aria-label="Juego de carros Ruta 03">
+    <div class="marco" id="marco">
+      <div id="juego" role="img" aria-label="Carretera con el carro del jugador, vehículos y barriles"></div>
+      <div class="acciones-escena"><button id="accion" class="boton-principal" type="button" disabled>Cargando la ruta…</button></div>
+      <div id="fallo" hidden><h2>No se pudo cargar el juego</h2><p>Recarga la página o abre el proyecto con ABRIR-JUEGO.cmd.</p><button type="button" onclick="location.reload()">Volver a cargar</button></div>
+    </div>
+    <div class="panel-control">
+      <div class="direccion" aria-label="Controles táctiles"><button type="button" id="izquierda" aria-label="Mover a la izquierda">←</button><button type="button" id="derecha" aria-label="Mover a la derecha">→</button></div>
+      <p id="estado" role="status" aria-live="polite">Tres vidas. Dos niveles. Una meta.</p>
+      <button class="boton-pausa" id="pausa" type="button" disabled aria-label="Pausar partida">Ⅱ</button>
+    </div>
+    <p class="ayuda-control"><span>← ↑ ↓ → <span class="solo-escritorio">o W A S D</span></span> <span>En celular: arrastra tu carro</span></p>
+  </section>
+</main>
+<footer class="pie">
+  <span>Hecho para jugar. Construido con JavaScript y Phaser CE.</span>
+  <nav aria-label="Materiales de entrega"><button id="captura" type="button">Guardar captura</button><button id="grabar" type="button" disabled>● Grabar partida</button><a href="entrega/demostracion.html">Ver demostración</a><a href="entrega/Entrega_Jose_Eduardo_Alvarado_Mejia.pdf">PDF de entrega ↗</a></nav>
+</footer>
+<p id="grabacion-estado" class="estado-grabacion" role="status" aria-live="polite"></p>
+<a id="descarga-grabacion" hidden>Guardar video grabado</a>
+<a id="descarga-captura" hidden>Descargar captura PNG</a>
+<noscript>Activa JavaScript para jugar Ruta 03.</noscript>
+</body>
+</html>
